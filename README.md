@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SaaS Frontend Dashboard
 
-## Getting Started
+A modern SaaS frontend application built using **Next.js (App Router)** and **Tailwind CSS**, featuring authentication flow, protected dashboard routes, theme management, and API-driven pages. The project is deployed on **Vercel** with GitHub CI/CD integration.
 
-First, run the development server:
+🔗 **Live Demo:**  
+https://saas-frontend-lilac.vercel.app
 
-```bash
+
+## 🚀 Features
+
+- 🔐 **Authentication Flow**
+  - Login & Signup pages
+  - Fake authentication using `localStorage`
+  - Protected routes (unauthenticated users redirected to login)
+
+- 📊 **Dashboard**
+  - Sidebar & top navigation
+  - Dashboard home page
+  - Users page with API data
+  - Settings page
+
+- 👥 **Users Page**
+  - Fetches user data from a public API
+  - Displays users in a responsive table
+  - Loading state handling
+
+- ⚙️ **Settings Page**
+  - Update user profile (name & email)
+  - Dark / Light theme toggle
+  - Theme preference persists using `localStorage`
+
+- 🌗 **Theme Management**
+  - Light theme by default
+  - Dark mode enabled via manual toggle
+  - Implemented using Tailwind `dark` class strategy and CSS variables
+
+- 🌍 **Deployment**
+  - Hosted on Vercel
+  - Automatic redeployment on every GitHub push
+
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS
+- **State Management:** React Hooks
+- **Authentication:** Client-side (localStorage based)
+- **API:** JSONPlaceholder (public API)
+- **Deployment:** Vercel
+- **Version Control:** Git & GitHub
+
+
+## 📁 Project Structure
+src/
+├─ app/
+│ ├─ login/
+│ ├─ signup/
+│ ├─ dashboard/
+│ │ ├─ users/
+│ │ ├─ settings/
+│ │ └─ page.js
+│ ├─ layout.js
+│ └─ globals.css
+├─ components/
+│ ├─ dashboard/
+│ │ ├─ Sidebar.js
+│ │ ├─ Topbar.js
+│ │ └─ DashboardLayout.js
+│ └─ ProtectedRoute.js
+└─ utils/
+└─ auth.js
+
+
+## 🧪 How to Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/ShilpaS2001/saas-frontend.git
+
+
+Navigate to project folder
+
+cd saas-frontend
+
+
+Install dependencies
+
+npm install
+
+
+Run development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open in browser:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+🧠 Key Implementation Details
 
-To learn more about Next.js, take a look at the following resources:
+Protected routes are handled using a reusable ProtectedRoute component.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dark mode is implemented using Tailwind’s dark class and CSS variables.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Theme preference and profile data persist across refresh using localStorage.
 
-## Deploy on Vercel
+Dashboard pages are structured using reusable layout components.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Vercel automatically rebuilds and redeploys on every GitHub push.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📌 Notes
+
+This project focuses on frontend logic and architecture.
+
+Authentication is intentionally mocked for demonstration purposes.
+
+Backend integration can be added easily if required.
+
+👩‍💻 Author
+
+Shilpa S
+GitHub: https://github.com/ShilpaS2001
