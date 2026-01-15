@@ -1,7 +1,40 @@
 @import "tailwindcss";
 
+/* 1. Define variables in the new Tailwind v4 @theme block */
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #111827;
+  }
+
+/* This is the critical selector that your JS toggle targets */
+.dark {
+  --background: #030712; 
+  --foreground: #f9fafb;
+}
+
+/* 3. Apply to the body */
 body {
-  background-color: #ffffff;
-  color: #111827;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  /* transition makes the theme switch feel smooth */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+}
+
+/* 4. Quality of Life & Banao Requirements */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Prevents the dreaded horizontal scroll on mobile */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }

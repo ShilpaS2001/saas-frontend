@@ -1,14 +1,17 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "SaaS App",
-  description: "Frontend Assignment",
+  title: "SaaS App | Banao",
+  description: "Modern SaaS Dashboard",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900 antialiased">
+      {/* Removing hardcoded 'bg-white' from here allows 
+          the globals.css variables to take over.
+      */}
+      <body className="antialiased selection:bg-blue-100 dark:selection:bg-blue-900">
         {children}
       </body>
     </html>
