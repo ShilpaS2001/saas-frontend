@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // This is the absolute requirement for the toggle to work
+  // CRITICAL: This allows the 'dark' class to work
   darkMode: 'class', 
   content: [
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,7 +8,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // This links your CSS variables to Tailwind utility classes
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
