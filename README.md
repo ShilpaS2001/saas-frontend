@@ -1,123 +1,32 @@
-# SaaS Frontend Dashboard
+Setup
+Clone: git clone https://github.com/ShilpaS2001/saas-frontend.git
 
-A modern SaaS frontend application built using **Next.js (App Router)** and **Tailwind CSS**, featuring authentication flow, protected dashboard routes, theme management, and API-driven pages. The project is deployed on **Vercel** with GitHub CI/CD integration.
+Install: npm install
 
-🔗 **Live Demo:**  
-https://saas-frontend-lilac.vercel.app
+Run: npm run dev
 
+Features Checklist
+✅ Authentication: Functional Login/Signup with Protected Routes.
 
-## 🚀 Features
+✅ Dashboard: Summary view with API data fetching from JSONPlaceholder.
 
-- 🔐 **Authentication Flow**
-  - Login & Signup pages
-  - Fake authentication using `localStorage`
-  - Protected routes (unauthenticated users redirected to login)
+✅ Theme Toggle: Pixel-perfect Dark Mode with localStorage persistence.
 
-- 📊 **Dashboard**
-  - Sidebar & top navigation
-  - Dashboard home page
-  - Users page with API data
-  - Settings page
+✅ CRUD/Profile: Real-time profile updates using Custom Browser Events.
 
-- 👥 **Users Page**
-  - Fetches user data from a public API
-  - Displays users in a responsive table
-  - Loading state handling
-
-- ⚙️ **Settings Page**
-  - Update user profile (name & email)
-  - Dark / Light theme toggle
-  - Theme preference persists using `localStorage`
-
-- 🌗 **Theme Management**
-  - Light theme by default
-  - Dark mode enabled via manual toggle
-  - Implemented using Tailwind `dark` class strategy and CSS variables
-
-- 🌍 **Deployment**
-  - Hosted on Vercel
-  - Automatic redeployment on every GitHub push
+Screenshots
+<img width="1830" height="1014" alt="image" src="https://github.com/user-attachments/assets/c55632d2-d9dd-4e26-948e-417be618ace4" />
+<img width="874" height="715" alt="image" src="https://github.com/user-attachments/assets/fee1b3fe-cc11-42c7-9dc7-4611fd9e12c2" />
+<img width="672" height="666" alt="image" src="https://github.com/user-attachments/assets/f480b816-1672-42fa-9456-7f02ee335981" />
+<img width="1918" height="961" alt="image" src="https://github.com/user-attachments/assets/db7726b5-cb7f-439b-90ef-3f79152f2d2d" />
+<img width="1901" height="924" alt="image" src="https://github.com/user-attachments/assets/1bf8979a-5336-41e7-b5f8-0ac22f13458e" />
 
 
-## 🛠 Tech Stack
+Decisions & Tradeoffs
+Decision: Used Custom Browser Events (profileUpdate) for UI synchronization.
 
-- **Framework:** Next.js 16 (App Router)
-- **Styling:** Tailwind CSS
-- **State Management:** React Hooks
-- **Authentication:** Client-side (localStorage based)
-- **API:** JSONPlaceholder (public API)
-- **Deployment:** Vercel
-- **Version Control:** Git & GitHub
+Tradeoff: Instead of a complex State Management library like Redux, I chose an event-driven approach to keep the bundle size small and performance high for a frontend-heavy task.
 
+Decision: Implemented Tailwind CSS v3 with a class strategy for dark mode.
 
-## 📁 Project Structure
-src/
-├─ app/
-│ ├─ login/
-│ ├─ signup/
-│ ├─ dashboard/
-│ │ ├─ users/
-│ │ ├─ settings/
-│ │ └─ page.js
-│ ├─ layout.js
-│ └─ globals.css
-├─ components/
-│ ├─ dashboard/
-│ │ ├─ Sidebar.js
-│ │ ├─ Topbar.js
-│ │ └─ DashboardLayout.js
-│ └─ ProtectedRoute.js
-└─ utils/
-└─ auth.js
-
-
-## 🧪 How to Run Locally
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/ShilpaS2001/saas-frontend.git
-
-
-Navigate to project folder
-
-cd saas-frontend
-
-
-Install dependencies
-
-npm install
-
-
-Run development server
-
-npm run dev
-
-
-Open in browser:
-
-http://localhost:3000
-
-🧠 Key Implementation Details
-
-Protected routes are handled using a reusable ProtectedRoute component.
-
-Dark mode is implemented using Tailwind’s dark class and CSS variables.
-
-Theme preference and profile data persist across refresh using localStorage.
-
-Dashboard pages are structured using reusable layout components.
-
-Vercel automatically rebuilds and redeploys on every GitHub push.
-
-📌 Notes
-
-This project focuses on frontend logic and architecture.
-
-Authentication is intentionally mocked for demonstration purposes.
-
-Backend integration can be added easily if required.
-
-👩‍💻 Author
-
-Shilpa S
-GitHub: https://github.com/ShilpaS2001
+Tradeoff: I prioritized localStorage for theme persistence over server-side cookies to ensure zero-latency theme switching on the client side.
